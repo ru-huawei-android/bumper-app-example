@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
             String appId = "your.app.package.name";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("appmarket://details?id=" + appId));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setPackage("com.huawei.appmarket.tv");
             startActivity(intent);
         } catch (ActivityNotFoundException ex) {
             Toast.makeText(this, "DEBUG: AppGallery not found", Toast.LENGTH_SHORT).show();
