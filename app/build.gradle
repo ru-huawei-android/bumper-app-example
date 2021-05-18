@@ -9,12 +9,14 @@ android {
             storePassword '123456'
             keyAlias 'bumperkey'
             keyPassword '123456'
+            v2SigningEnabled true
         }
         debug {
             storeFile file('../keystore/bumperkey.jks')
             storePassword '123456'
             keyAlias 'bumperkey'
             keyPassword '123456'
+            v2SigningEnabled true
         }
     }
     compileSdkVersion 30
