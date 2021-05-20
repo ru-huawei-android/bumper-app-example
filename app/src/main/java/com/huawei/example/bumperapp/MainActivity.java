@@ -13,14 +13,26 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // if you want to redirect user to appgallery, without showing him landing page
+        // with explanation, uncomment following 2 lines
+        // and comment setContentView(R.layout.activity_main); line
+
+        // goToAppGallery();
+        // finish();
+
         setContentView(R.layout.activity_main);
     }
 
     public void UpdateClick(View view) {
+        goToAppGallery();
+    }
+
+    public void goToAppGallery() {
         try {
-            // Здесь необходимо использовать имя пакета вашего приложения. Так как имя пакета и сертификат
-            // у бампера такой же, как у основного приложения, он просто будет заменён основным приложением при обновлении.
-            // versionCode в build.gradle должен быть заведомо ниже, чем у основного приложения
+            // Please replace this constant with your main app package name
+            // also change it in build.gradle and AndroidManifest.xml
+            // versionCode in build.gradle should be less than your main app versionCode
 
             String appId = "your.app.package.name";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("appmarket://details?id=" + appId));
